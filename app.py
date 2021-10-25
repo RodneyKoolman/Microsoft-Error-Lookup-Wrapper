@@ -15,7 +15,6 @@ frame.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
 # Settings
 tool = 'input\Err_6.4.5.exe'
-query = ''
 message = 'You can search Microsoft errors in hexadecimal 0x0 or decimal 0'
 
 def search(query):
