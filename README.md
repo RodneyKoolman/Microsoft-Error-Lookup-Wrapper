@@ -7,7 +7,7 @@ I have freezed the application into a standalone executable for easy use in Wind
 Download here:
 
 Give me a ping if I forget to update the standalone executable with the latest Error Lookup Tool version.
-Currently it should be up-to-date.
+Currently it should be **up-to-date**.
 
 ## Usage
 
