@@ -6,7 +6,7 @@ from tkinter import ttk, Text, Scrollbar
 from tkinter.constants import BOTH, BOTTOM, TOP, RIGHT, X, Y
 
 root = tk.Tk()
-root.title("Microsoft Error Lookup Tool Wrapper")
+root.title("Microsoft Error Lookup Wrapper")
 root.geometry("1000x500")
 root.resizable(True, True)
 
