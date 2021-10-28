@@ -4,7 +4,8 @@ A simple wrapper with GUI for the Microsoft Error Lookup command line tool. The 
 There are currently 25259 return codes registered from 173 sources. Use the search field to input return codes or strings. You can also output all known return codes in CSV format.
 
 I have freezed the application into a standalone executable for easy use in Windows.
-Download here:
+
+- Download here: [Windows executable](https://github.com/RodneyKoolman/Microsoft-Error-Lookup-Wrapper/releases/download/v1.0/Microsoft_Error_Lookup_Wrapper_v1.exe "Windows executable")
 
 Give me a ping if I forget to update the standalone executable with the latest Error Lookup Tool version.
 Currently it should be **up-to-date**.
@@ -12,6 +13,10 @@ Currently it should be **up-to-date**.
 ## Demo
 
 ![demo](/demo/demo-wrapper.gif)
+
+## Download
+
+- [Windows executable](https://github.com/RodneyKoolman/Microsoft-Error-Lookup-Wrapper/releases/download/v1.0/Microsoft_Error_Lookup_Wrapper_v1.exe "Windows executable")
 
 ## Usage
 
