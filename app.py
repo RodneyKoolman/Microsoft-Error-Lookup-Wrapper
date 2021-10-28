@@ -6,13 +6,14 @@ from tkinter import ttk, Text, Scrollbar
 from tkinter.constants import BOTH, BOTTOM, TOP, RIGHT, X, Y
 
 root = tk.Tk()
-root.title("Microsoft Error Lookup Tool - Wrapper")
+root.title("Microsoft Error Lookup Tool Wrapper")
 root.geometry("1000x500")
 root.resizable(True, True)
 
 frame = ttk.Frame(root)
 frame.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
+input = "input\Err_6.4.5.exe"
 message = "Usage:\n\
 1. Search decorated hex (0x54f)\n\
 2. Search implicit hex (54f)\n\
@@ -22,7 +23,6 @@ message = "Usage:\n\
 6. Use show all to output all known error codes\n\
 7. Use clear all to clear all input and output fields\n\n\
 There are currently 25259 return codes registered from 173 sources."
-input = "input\Err_6.4.5.exe"
 
 
 def resource_path(relative_path):
