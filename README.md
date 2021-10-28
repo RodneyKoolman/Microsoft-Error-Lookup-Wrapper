@@ -9,6 +9,10 @@ Download here:
 Give me a ping if I forget to update the standalone executable with the latest Error Lookup Tool version.
 Currently it should be **up-to-date**.
 
+## Demo
+
+![demo](/demo/demo-wrapper.gif)
+
 ## Usage
 
 1. Search decorated hex (0x54f)
