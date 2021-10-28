@@ -1,26 +1,34 @@
-import tkinter as tk
-from tkinter import ttk, Text
-from tkinter.constants import BOTH, BOTTOM, TOP, X
+import sys
+import os
 import subprocess
+import tkinter as tk
+from tkinter import ttk, Text, Scrollbar
+from tkinter.constants import BOTH, BOTTOM, TOP, RIGHT, X, Y
 
-# Main window
 root = tk.Tk()
 root.title('Microsoft Error Lookup Tool - Wrapper')
 root.geometry('1000x500')
 root.resizable(True, True)
 
-# Frame
 frame = ttk.Frame(root)
 frame.pack(padx=10, pady=10, fill=BOTH, expand=True)
 
-# Settings
-tool = 'input\Err_6.4.5.exe'
-message = 'You can search Microsoft errors in hexadecimal 0x0 or decimal 0'
+message = 'Usage:\n1. Search decorated hex (0x54f)\n2. Search implicit hex (54f)\n3. Search ambiguous (1359)\n4. Search exact string (=ERROR_INTERNAL_ERROR)\n5. Search substring (:INTERNAL_ERROR)\n6. Use show all to output all known error codes\n7. Use clear all to clear all input and output fields\n\nThere are currently 25259 return codes registered from 173 sources.'
+input = 'input\Err_6.4.5.exe'
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath('.')
+
+    return os.path.join(base_path, relative_path)
 
 def search(query):
+    if query == '': return
     text_box.delete("1.0", "end")
 
-    with subprocess.Popen([tool, query], shell=True, stdout=subprocess.PIPE, bufsize=1, universal_newlines=True) as p:
+    with subprocess.Popen([resource_path(input), query], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, bufsize=1, universal_newlines=True) as p:
         for line in p.stdout:
             text_box.insert(tk.END, line)
 
@@ -37,11 +45,19 @@ query_entry.focus()
 search_button = tk.Button(frame, text="search", font='sans 14 bold', command=lambda:search(query_var.get()))
 search_button.pack(fill=X)
 
+showall_button = tk.Button(frame, text="show all", font='sans 14 bold', command=lambda:search('/:outputtoCSV'))
+showall_button.pack(fill=X)
+
 clear_button = tk.Button(frame, text="clear all", font='sans 14 bold', command=clear)
 clear_button.pack(fill=X)
 
-text_box = Text(frame, height=13, width=40, wrap='word')
+scrollbar = Scrollbar(frame)
+scrollbar.pack(side=RIGHT, fill=Y)
+
+text_box = Text(frame, height=13, width=40, wrap='word', yscrollcommand=scrollbar.set, relief='sunken')
 text_box.pack(side=BOTTOM, pady=10, fill=BOTH, expand=True)
 text_box.insert('end', message)
+
+scrollbar.config(command=text_box.yview)
 
 root.mainloop()
