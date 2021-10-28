@@ -1,6 +1,6 @@
 # Microsoft Error Lookup Wrapper
 
-A simple wrapper with GUI for the Microsoft Error Lookup command line tool. The Error Lookup Tool, also known as "ERR", is a command-line tool to decode many Microsoft error code.
+A simple wrapper with GUI for the Microsoft Error Lookup command line tool. The Error Lookup Tool, also known as "ERR", is a command-line tool to decode many Microsoft error codes.
 There are currently 25259 return codes registered from 173 sources. Use the search field to input error codes or strings. You can also output all known return codes in CSV format.
 
 I have freezed the application into a standalone executable for easy use in Windows.
